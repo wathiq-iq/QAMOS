@@ -7,7 +7,8 @@
 ***
 ![](https://aosus.org/uploads/default/original/2X/9/9e588728bbb0b8f598c267d7e362d28df0269e2c.png)
 
-[Live Version]: http://192.99.83.100/
+[Live Version]: http://192.99.83.100
+##### Default Cpanel Login: admin || qamosadmin
 ## Requirements:
 + Apache Server 2.4.10+
 + PHP 5+
