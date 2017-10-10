@@ -14,7 +14,7 @@
 ## ToDo-List:
 - [ ] Format And Order Codes To SpeedUp The Performance
 - [ ] Create An Api For Admins For Remote Access
-- [ ] Built-In Live Chat For Vistors
+- [x] Built-In Live Chat For Vistors
 - [ ] Extra Secuirty
 - [ ] Upgrade Administration Panel Design , Functionality
 - [x] Adding Rename Words Option In The Edit Panel
