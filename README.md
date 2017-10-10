@@ -22,4 +22,6 @@
 - [ ] Create Permissions System ( Add, Verfiy, Delete, Rename)
 ---
 #### Contact Me ( **Telegram - Username** ) : @ProMan347
+#### Aosus Telegram Group : https://t.me/aosus
+#### QAMOS Developers Telegram Group : https://t.me/joinchat/EP8zKg2qPIkD9b96HtqOUA
 ###### *@Copyrights 2017-2018 _Aosus_ All Rights Reserved*
