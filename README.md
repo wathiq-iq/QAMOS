@@ -1,7 +1,7 @@
 # QAMOS - قاموس
 > سكربت قاموس لترجمة المصطلحات التقنية
 ```YML
- Build-Version: 0.1 
+ Build-Version: 0.2 
  Status: Under Development ( Beta )
 ```
 ***
