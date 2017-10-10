@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>Asus Live-Chat</title>
+	<link rel="icon" type="image/png" href="https://aosus.org/uploads/default/original/1X/d3bd83add89f9bd0da48c30c55a693e06be1b056.png">
+	<link rel="apple-touch-icon" type="image/png" href="https://aosus.org/uploads/default/original/2X/c/c252390ce9a24ba2e4bfb7d0730980b73b205f51.png">
+	<link rel="icon" type="image/png" sizes="144x144" href="https://aosus.org/uploads/default/original/2X/c/c252390ce9a24ba2e4bfb7d0730980b73b205f51.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="chsys.js"></script>
+	<script type="text/javascript">
+		var name = prompt("Enter your chat name:", "Guest");
+		if (!name || name === ' ') {
+    	   name = "Guest";	
+    	}
+		name = name.replace(/(<([^>]+)>)/ig,"");
+		var chat =  new Chat();
+		 
+	$(function() {
+             $("#msg").keydown(function(event) {  
+             
+                 var key = event.which;  
+           
+                
+                 if (key >= 33) {
+                   
+                     var maxLength = $(this).attr("maxlength");  
+                     var length = this.value.length;  
+                     
+                    
+                     if (length >= maxLength) {  
+                         event.preventDefault();  
+                     }  
+                  }  
+    		 																																																});
+    		
+    		 $('#msg').keyup(function(e) {	
+    		 					 
+    			  if (e.keyCode == 13) { 
+    			  
+                    var text = $(this).val();
+    				var maxLength = $(this).attr("maxlength");  
+                    var length = text.length; 
+                     
+                    // send 
+                    if (length <= maxLength + 1) { 
+                     
+    			        chat.send(text, name);	
+    			        $(this).val("");
+						chat.update();
+    			        
+                    } else {
+                    
+    					$(this).val(text.substring(0, maxLength));
+    					
+    				}	
+    				
+    				
+    			  }
+             });
+            
+    	});
+	</script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <style>
+  body{
+	  background-color: #2C3E50;
+  }
+    .chatbox{
+        background-color: rgb(236, 240, 241); 
+        height: 500px; 
+        overflow-y: scroll;
+        border-style: solid;
+        border-color: rgb(149, 165, 166);
+        padding-left: 5px;
+        padding-bottom: 5px;
+        padding-right: 5px;
+    }
+    .chatform{
+        border-style: none solid solid solid;
+        border-color: rgb(149, 165, 166);
+        padding: 5px;
+    }
+    .chatcontent {
+		padding: 17px;
+		line-height: 200%;
+		font-size: 18px;
+		font-weight: bold;
+    }
+  </style>
+  <body onload="setInterval('chat.update()', 1500)">
+  <div class="jumbotron" style="height: 220px; background-image: url('../assets/test.png'); background-size: cover; background-position: center;">
+	
+</div>
+    <div class="wrapper">
+        <div class="container">
+		<br/>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="background-color: rgb(242, 241, 239);">
+                        <div class="row">
+                            <div id="chatbox" class="col-md-12 text-left chatbox">
+                                <div id="chatcontent" class="chatcontent">
+                                
+                                   
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-12 chatform">
+                                <div class="col-md-12 col-md-12 col-lg-12">
+                                    <input class="form-control" type="text" id="msg" maxlength="200" name="message" placeholder="Type the message">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+  </body>
+</html>
