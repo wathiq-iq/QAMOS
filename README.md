@@ -12,6 +12,8 @@
 ## Requirements:
 + Apache Server 2.4.10+
 + PHP 5+
++ Jquery 3.3.7+
++ Bootstrap 3.3.7+
 ## ToDo-List:
 - [ ] Format And Order Codes To SpeedUp The Performance
 - [ ] Create An Api For Admins For Remote Access
